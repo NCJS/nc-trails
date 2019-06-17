@@ -3,6 +3,7 @@
     <h1>NC trails</h1>
     <h2 v-if="loading">Loading</h2>
     <h2 v-if="error" class="error">{{error}}</h2>
+    <Map :zoom="zoom" :center="center" :trails="trails"/>
     <ol>
       <li v-for="trail in trails" :key="trail.attributes.OBJECTID">{{trailName(trail.attributes)}}</li>
     </ol>
@@ -10,18 +11,21 @@
 </template>
 
 <script>
+import Map from "./Map";
 import axios from "axios";
 import { lineString, length } from "@turf/turf";
 import { log } from "util";
 
 export default {
   name: "app",
-  components: {},
+  components: { Map },
   data: function() {
     return {
       trails: [],
       loading: true,
-      error: null
+      error: null,
+      zoom: 10,
+      center: [39.26, -121.01]
     };
   },
   mounted() {
