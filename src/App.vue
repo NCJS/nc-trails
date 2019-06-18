@@ -3,20 +3,19 @@
     <h1>NC trails</h1>
     <h2 v-if="loading">Loading</h2>
     <h2 v-if="error" class="error">{{error}}</h2>
-    <ol>
-      <li v-for="trail in trails" :key="trail.attributes.OBJECTID">{{trailName(trail.attributes)}}</li>
-    </ol>
+    <Table :trails="trails"/>
   </div>
 </template>
 
 <script>
+import Table from "./Table";
 import axios from "axios";
 import { lineString, length } from "@turf/turf";
 import { log } from "util";
 
 export default {
   name: "app",
-  components: {},
+  components: { Table },
   data: function() {
     return {
       trails: [],
