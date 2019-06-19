@@ -39,8 +39,16 @@ export default {
         });
       const allTrails = temp.data.features;
       this.trails = allTrails.map(t => {
-        var line = lineString(t.geometry.paths[0]);
+        // flatten t.geometry.paths for trails made up of multiple segments
+        const lineArr = [];
+        t.geometry.paths.forEach(el =>
+          el.forEach(elInner => lineArr.push(elInner))
+        );
+        // create geoJson
+        var line = lineString(lineArr);
+        // calculate length
         var l = length(line, { units: "miles" });
+        // add length to trail object
         return { ...t, attributes: { ...t.attributes, length: l } };
       });
       this.loading = false;
