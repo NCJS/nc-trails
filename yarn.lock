@@ -9500,16 +9500,12 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-<<<<<<< HEAD
-vue@>=2.0.0, vue@^2.6.10:
-=======
 vue2-leaflet@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/vue2-leaflet/-/vue2-leaflet-2.1.1.tgz#33ec8920bd1e273b312209a84ce355021226ee79"
   integrity sha512-boJIObTHJOtiLqPDtcL8FdQMr/PLDyZ6/InQBU13mcmNtn4/hvzbyqLmVtvWbRFeGOifAMkJBlbj3gLjrhFdmw==
 
-vue@^2.6.10:
->>>>>>> Very basic map
+vue@>=2.0.0, vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=

@@ -1,36 +1,22 @@
 <template>
   <div id="app">
-    <h1>NC trails</h1>
     <h2 v-if="loading">Loading</h2>
     <h2 v-if="error" class="error">{{error}}</h2>
-<<<<<<< HEAD
-    <Table :trails="trails"/>
-=======
     <Map :zoom="zoom" :center="center" :trails="trails"/>
-    <ol>
-      <li v-for="trail in trails" :key="trail.attributes.OBJECTID">{{trailName(trail.attributes)}}</li>
-    </ol>
->>>>>>> Very basic map
+    <Table :trails="trails"/>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
 import Table from "./Table";
-=======
 import Map from "./Map";
->>>>>>> Very basic map
 import axios from "axios";
 import { lineString, length } from "@turf/turf";
 import { log } from "util";
 
 export default {
   name: "app",
-<<<<<<< HEAD
-  components: { Table },
-=======
-  components: { Map },
->>>>>>> Very basic map
+  components: { Map, Table },
   data: function() {
     return {
       trails: [],
@@ -77,7 +63,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .error {
   color: red;
