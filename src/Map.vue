@@ -1,6 +1,6 @@
 <template>
   <div class="map-wrapper">
-    <l-map :zoom="zoom" :center="center">
+    <l-map :zoom="zoom" :center="center" @update:zoom="zoomUpdated" @update:center="centerUpdated">
       <l-tile-layer :url="url"></l-tile-layer>
       <div v-for="(t,i) in reverseLatLng" :key="i">
         <l-polyline :lat-lngs="t" color="red"></l-polyline>
@@ -25,12 +25,20 @@ export default {
       url: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
     };
   },
-  props: ["zoom", "center", "trails"],
+  props: ["zoom", "center", "trails", "updateMapValues"],
   computed: {
     reverseLatLng: function() {
       return this.trails.map(t => {
         return t.geometry.paths[0].map(tt => [tt[1], tt[0]]);
       });
+    }
+  },
+  methods: {
+    zoomUpdated(zoom) {
+      this.updateMapValues(zoom, this.center);
+    },
+    centerUpdated(center) {
+      this.updateMapValues(this.zoom, center);
     }
   }
 };

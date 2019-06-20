@@ -2,7 +2,7 @@
   <div id="app">
     <h2 v-if="loading">Loading</h2>
     <h2 v-if="error" class="error">{{error}}</h2>
-    <Map :zoom="zoom" :center="center" :trails="trails"/>
+    <Map :zoom="zoom" :center="center" :trails="trails" :updateMapValues="updateMapValues"/>
     <Table :trails="trails"/>
   </div>
 </template>
@@ -60,6 +60,11 @@ export default {
       return trail.OWNERSHIP
         ? `${trail.NAME} - ${trail.OWNERSHIP} - ${trail.length.toFixed(1)}mi`
         : `${trail.NAME} - ${trail.length.toFixed(1)}mi`;
+    },
+    updateMapValues(zoom, center) {
+      this.zoom = zoom;
+      this.center = center;
+      console.log("zoom, center", zoom, center);
     }
   }
 };
