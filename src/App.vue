@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <h2 v-if="loading">Loading</h2>
+    <div v-if="loading" class="fullscreen">
+      <h1>Loading...</h1>
+    </div>
     <h2 v-if="error" class="error">{{error}}</h2>
     <Map :zoom="zoom" :center="center" :trails="trails" :updateMapValues="updateMapValues"/>
     <Table :trails="trails"/>
@@ -76,6 +78,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+.fullscreen {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+  background: white;
 }
 .error {
   color: red;
