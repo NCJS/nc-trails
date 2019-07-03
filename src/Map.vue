@@ -3,7 +3,7 @@
     <l-map :zoom="zoom" :center="center" @update:zoom="zoomUpdated" @update:center="centerUpdated">
       <l-tile-layer :url="url"></l-tile-layer>
       <div v-for="(t,i) in reverseLatLng" :key="i">
-        <l-polyline :lat-lngs="t" color="red"></l-polyline>
+        <l-polyline :lat-lngs="t" :color="colorPicker(trails.length, i)"></l-polyline>
       </div>
     </l-map>
   </div>
@@ -39,6 +39,10 @@ export default {
     },
     centerUpdated(center) {
       this.updateMapValues(this.zoom, center);
+    },
+    colorPicker: function(count, i) {
+      let hue = 360 / count * i;
+      return `hsl(${hue}, 100%, 50%)`;
     }
   }
 };

@@ -11,10 +11,11 @@
     "@turf/turf": "5.1.6",
     "axios": "^0.19.0",
     "core-js": "^2.6.5",
-    "vue-tables-2": "^1.4.70",
     "leaflet": "^1.5.1",
     "vue": "^2.6.10",
-    "vue2-leaflet": "^2.1.1"
+    "vue-tables-2": "^1.4.70",
+    "vue2-leaflet": "^2.1.1",
+    "yarn": "^1.16.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
