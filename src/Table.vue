@@ -40,6 +40,7 @@ export default {
 				let trailID = filteredTrailList.findIndex(obje => obje.name == t.attributes.NAME);
 				return trailID;
 			}
+			console.log()
 			let trailPartialLength = parseFloat(t.attributes.length.toFixed(1));
 			let currentTrailLengthNum = parseFloat(filteredTrailList[specificTrail(t.attributes.NAME)].length);
 			filteredTrailList[specificTrail(t.attributes.NAME)].length = (currentTrailLengthNum + trailPartialLength).toFixed(1); 
