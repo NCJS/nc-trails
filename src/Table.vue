@@ -42,7 +42,7 @@ export default {
 			}
 			let trailPartialLength = parseFloat(t.attributes.length.toFixed(1));
 			let currentTrailLengthNum = parseFloat(filteredTrailList[specificTrail(t.attributes.NAME)].length);
-			filteredTrailList[specificTrail(t.attributes.NAME)].length = currentTrailLengthNum + trailPartialLength; 
+			filteredTrailList[specificTrail(t.attributes.NAME)].length = (currentTrailLengthNum + trailPartialLength).toFixed(1); 
 		}
 	  });
       return filteredTrailList;
