@@ -24,27 +24,27 @@ export default {
   computed: {
      filteredTrailList() {
       if (this.trails.length === 0) return [];
-		 let filteredTrailList = [];
-		 let obj = {}
-      this.trails.forEach(t => {
-        if (!obj[t.attributes.NAME]) {
+         let filteredTrailList = [];
+         let obj = {};
+         this.trails.forEach(t => {
+         if (!obj[t.attributes.NAME]) {
           // trail name key does not exist, populate with trail
-		   obj[t.attributes.NAME] = t;
-		   filteredTrailList.push({
-             name: t.attributes.NAME,
-			 length: t.attributes.length.toFixed(1)
-			 });
+             obj[t.attributes.NAME] = t;
+             filteredTrailList.push({
+				name: t.attributes.NAME,
+				length: t.attributes.length.toFixed(1)
+                });
         } else { 
 			//trail name does exist, find it in trail array and sum length
-			var specificTrail = function(trailName){
+			var specificTrail = function(){
 				let trailID = filteredTrailList.findIndex(obje => obje.name == t.attributes.NAME);
 				return trailID;
 			}
 			let trailPartialLength = parseFloat(t.attributes.length.toFixed(1));
-			let currentTrailLengthNum = parseFloat(filteredTrailList[specificTrail(t.attributes.NAME)].length);
-			filteredTrailList[specificTrail(t.attributes.NAME)].length = (currentTrailLengthNum + trailPartialLength).toFixed(1); 
+			let currentTrailLengthNum = parseFloat(filteredTrailList[specificTrail()].length);
+			filteredTrailList[specificTrail()].length = (currentTrailLengthNum + trailPartialLength).toFixed(1); 
 		}
-	  });
+    });
       return filteredTrailList;
     }
   }
