@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Home from "./Home.vue";
-import About from "./About.vue";
+//import Home from "./Home.vue";
+//import About from "./About.vue";
 
   export default{
    name: "Header"
