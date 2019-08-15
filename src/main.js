@@ -14,6 +14,11 @@ Vue.config.productionTip = false;
 
 const routes = [
   {
+    path:'/',
+    name: 'Home',
+    component: Home
+  },
+  {
     path:'/Home',
     name: 'Home',
     component:Home
