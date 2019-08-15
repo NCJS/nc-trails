@@ -4,7 +4,6 @@
       <h1>Loading...</h1>
     </div>
       <h2 v-if="error" class="error">{{error}}</h2>
-    <Header></Header>
     <Map :zoom="zoom" :center="center" :trails="trails" :updateMapValues="updateMapValues"/>
     <Table :trails="trails"/>
   </div>
