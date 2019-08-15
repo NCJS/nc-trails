@@ -2,7 +2,7 @@
 <template>
   <nav>
     <ul>
-      <li><router-link to='Home' exact>Home</router-link></li>
+      <li><router-link to='/' exact>Home</router-link></li>
       <li><router-link to='About' exact>About</router-link></li>
     </ul>
   </nav>
