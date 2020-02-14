@@ -15,7 +15,7 @@
     "vue": "^2.6.10",
     "vue-tables-2": "^1.4.70",
     "vue2-leaflet": "^2.1.1",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
